@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Delegatecall Demo - Wallet Emulator</title>
+    <style>
+      body { font-family: system-ui, Arial; padding: 20px; }
+      .box { border: 1px solid #ddd; padding: 12px; margin-bottom: 12px; border-radius: 6px }
+      button { padding: 8px 12px; margin-right:8px }
+      pre { background:#f7f7f7; padding:8px }
+    </style>
+  </head>
+  <body>
+    <h1>Delegatecall Demo — Billetera virtual</h1>
+    <p>Interfaz mínima para desplegados locales: muestra owners y permite enviar el payload <code>pwn()</code> como "attacker".</p>
+
+    <div class="box">
+      <h3>Estado</h3>
+      <div>Signers: <span id="signers">(cargando...)</span></div>
+      <div>Deployments: <pre id="deployments">(cargando...)</pre></div>
+    </div>
+
+    <div class="box">
+      <h3>Owners</h3>
+      <div>Vulnerable: <span id="owner-vul">-</span></div>
+      <div>Seguro: <span id="owner-safe">-</span></div>
+      <div>Delegate (lib): <span id="owner-lib">-</span></div>
+      <button id="refresh">Refrescar owners</button>
+    </div>
+
+    <div class="box">
+      <h3>Storage & Eventos</h3>
+      <div>Storage vulnerable: <pre id="storage-vul">(cargando...)</pre></div>
+      <div>Eventos (DelegateCalled) vulnerables: <pre id="events-vul">(cargando...)</pre></div>
+      <button id="refresh-storage">Refrescar storage y eventos</button>
+    </div>
+
+    <div class="box">
+      <h3>Trace de transacción</h3>
+      <div>
+        <label>txHash: <input id="txhash" style="width:480px"/></label>
+        <button id="get-trace">Obtener trace</button>
+      </div>
+      <div style="margin-top:8px">Trace: <pre id="trace">(ningún trace)</pre></div>
+    </div>
+
+    <div class="box">
+      <h3>Acciones</h3>
+      <div>
+        <label>Usar signer index: <input id="signerIndex" type="number" min="0" value="1" style="width:80px"/></label>
+      </div>
+      <div style="margin-top:8px">
+        <button id="attack-vul">Atacar contrato vulnerable</button>
+        <button id="attack-safe">Atacar contrato seguro</button>
+      </div>
+      <div style="margin-top:8px">Resultado: <pre id="result">(esperando acción)</pre></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

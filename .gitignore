@@ -1,0 +1,51 @@
+# Hardhat
+cache/
+artifacts/
+
+# Node
+node_modules/
+coverage/
+coverage.json
+typechain/
+typechain-types/
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Hardhat files
+/.hardhat
+hardhat.config.ts
+typechain-types/
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+.directory
+.Trash-*
+
+# Debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Contract build info
+/deployments.json
+
+# Local blockchain data
+/deployments
+/hh.log
+/server.log
+
+# Production build
+/dist
+/build
